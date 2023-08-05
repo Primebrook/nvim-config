@@ -24,6 +24,9 @@ require("packer").startup(function(use)
 	-- the plugin manager can manage itself
 	use({ "wbthomason/packer.nvim" })
 
+	-- gruvbox theme
+	use({ "morhetz/gruvbox" })
+
 	-- telescope
 	use({
 		"nvim-telescope/telescope.nvim",
@@ -94,6 +97,7 @@ vim.opt.number = true
 vim.opt.tabstop = 4
 vim.opt.softtabstop = 4
 vim.opt.shiftwidth = 4
+vim.cmd.colorscheme("gruvbox")
 
 local util = require("lspconfig.util")
 

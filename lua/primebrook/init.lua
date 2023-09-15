@@ -35,14 +35,13 @@ require("packer").startup(function(use)
 	})
 
 	-- file explorer
-	use({"nvim-tree/nvim-tree.lua"})
+	use({ "nvim-tree/nvim-tree.lua" })
 
 	-- tmux & splot window navigation
-	use({"christoomey/vim-tmux-navigator"})
+	use({ "christoomey/vim-tmux-navigator" })
 
 	--maximizes and restores current window
-	use({"szw/vim-maximizer"})
-
+	use({ "szw/vim-maximizer" })
 
 	-- lsp config for elixir-ls support (and syntax highlighting)
 	use({ "neovim/nvim-lspconfig" })

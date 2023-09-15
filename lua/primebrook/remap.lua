@@ -11,9 +11,9 @@ vim.keymap.set("n", "<leader>test", function()
 	local file_ext = vim.fn.expand("%:e")
 	local test_commands = {
 		exs = "mix test",
-		py = "make test"
+		py = "make test",
 	}
-	
+
 	local test_cmd = test_commands[file_ext] .. " " .. current_file_path
 
 	if test_cmd then
@@ -24,8 +24,8 @@ vim.keymap.set("n", "<leader>test", function()
 end, {})
 
 -- Copying to system clipboard
-vim.keymap.set('n', 'Y', '"+yy', { noremap = true, silent = true })
-vim.keymap.set('v', 'Y', '"+y', { noremap = true, silent = true })
+vim.keymap.set("n", "Y", '"+yy', { noremap = true, silent = true })
+vim.keymap.set("v", "Y", '"+y', { noremap = true, silent = true })
 
 -- Managing Window Panes
 vim.keymap.set("n", "<leader>sv", "<C-w>v") -- split window vertically

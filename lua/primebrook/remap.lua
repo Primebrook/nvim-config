@@ -25,7 +25,7 @@ vim.keymap.set("n", "<leader>sx", ":close<CR>") -- close current split window
 -- plugin keymaps
 
 -- nvim-tree
-vim.keymap.set("n", "<leader>e", ":NvimTreeToggle<CR>")
+vim.keymap.set("n", "<leader>e", ":NvimTreeToggle<CR>", { noremap = true, silent = true })
 
 -- vim-maximizer
-vim.keymap.set("n", "<leader>sm", ":MaximizerToggle<CR>")
+vim.keymap.set("n", "<leader>sm", ":MaximizerToggle<CR>", { noremap = true, silent = true })

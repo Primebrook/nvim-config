@@ -66,7 +66,7 @@ require("packer").startup(function(use)
 end)
 
 require("nvim-treesitter.configs").setup({
-	ensure_installed = { "c", "lua", "vim", "elixir", "eex", "heex" },
+	ensure_installed = { "c", "lua", "vim", "elixir", "eex", "heex", "python", "rust" },
 	sync_install = false,
 	auto_install = true,
 	highlight = {
@@ -74,10 +74,14 @@ require("nvim-treesitter.configs").setup({
 	},
 })
 
-require("lspconfig").elixirls.setup({
+-- Setup language servers.
+local lspconfig = require("lspconfig")
+lspconfig.pyright.setup({})
+lspconfig.rust_analyzer.setup({})
+lspconfig.elixirls.setup({
 	cmd = { vim.fn.expand("~/.bin/elixir-ls/language_server.sh") },
 })
-require("lspconfig").clangd.setup({
+lspconfig.clangd.setup({
 	cmd = { vim.fn.expand("/Library/Developer/CommandLineTools/usr/bin/clangd") },
 })
 

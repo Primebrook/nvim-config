@@ -41,10 +41,10 @@ vim.keymap.set("n", "gt", "<cmd>lua vim.lsp.buf.type_definition()<CR>", { norema
 
 -- json formatting
 function convert_python_dict_to_json()
-    vim.api.nvim_command(":%s/'/\"/g")
-    vim.api.nvim_command(":%s/False/false/g")
-    vim.api.nvim_command(":%s/True/true/g")
-    vim.api.nvim_command(":%s/None/null/g")
+	vim.api.nvim_command(":%s/'/\"/g")
+	vim.api.nvim_command(":%s/False/false/g")
+	vim.api.nvim_command(":%s/True/true/g")
+	vim.api.nvim_command(":%s/None/null/g")
 end
 
 vim.keymap.set("n", "<leader>cj", ":lua convert_python_dict_to_json()<CR>", { noremap = true, silent = true })

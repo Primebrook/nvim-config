@@ -1,9 +1,11 @@
 vim.g.mapleader = " "
+
 vim.keymap.set("n", "<leader>pv", function()
 	vim.cmd("Ex")
 end, {})
+
 vim.keymap.set("n", "<leader>ff", function()
-	vim.cmd("Telescope find_files")
+	vim.cmd("Telescope find_files hidden=true")
 end, {})
 
 -- Copying to system clipboard
@@ -36,3 +38,15 @@ vim.keymap.set("n", "gr", "<cmd>lua vim.lsp.buf.references()<CR>", { noremap = t
 vim.keymap.set("n", "gi", "<cmd>lua vim.lsp.buf.implementation()<CR>", { noremap = true, silent = true })
 -- vim.keymap.set("n", "K", "<cmd>lua vim.lsp.buf.hover()<CR>", { noremap = true, silent = true })
 vim.keymap.set("n", "gt", "<cmd>lua vim.lsp.buf.type_definition()<CR>", { noremap = true, silent = true })
+
+-- json formatting
+function convert_python_dict_to_json()
+    vim.api.nvim_command(":%s/'/\"/g")
+    vim.api.nvim_command(":%s/False/false/g")
+    vim.api.nvim_command(":%s/True/true/g")
+    vim.api.nvim_command(":%s/None/null/g")
+end
+
+vim.keymap.set("n", "<leader>cj", ":lua convert_python_dict_to_json()<CR>", { noremap = true, silent = true })
+
+vim.keymap.set("n", "<leader>jq", "<cmd>%!jq --indent 4 '.'<CR>", { noremap = true, silent = true })

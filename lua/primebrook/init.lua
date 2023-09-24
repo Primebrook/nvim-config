@@ -43,9 +43,8 @@ require("packer").startup(function(use)
 	--maximizes and restores current window
 	use({ "szw/vim-maximizer" })
 
-	-- lsp config for elixir-ls support (and syntax highlighting)
+	-- lsp config
 	use({ "neovim/nvim-lspconfig" })
-	use({ "elixir-editors/vim-elixir" })
 
 	-- cmp framework for auto-completion support
 	use({ "hrsh7th/nvim-cmp" })
@@ -66,7 +65,7 @@ require("packer").startup(function(use)
 end)
 
 require("nvim-treesitter.configs").setup({
-	ensure_installed = { "c", "lua", "vim", "elixir", "eex", "heex", "python", "rust", "bash"},
+	ensure_installed = { "c", "lua", "vim", "elixir", "python", "rust", "bash" },
 	sync_install = false,
 	auto_install = true,
 	highlight = {

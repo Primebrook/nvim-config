@@ -66,7 +66,7 @@ require("packer").startup(function(use)
 end)
 
 require("nvim-treesitter.configs").setup({
-	ensure_installed = { "c", "lua", "vim", "elixir", "eex", "heex", "python", "rust" },
+	ensure_installed = { "c", "lua", "vim", "elixir", "eex", "heex", "python", "rust", "bash"},
 	sync_install = false,
 	auto_install = true,
 	highlight = {

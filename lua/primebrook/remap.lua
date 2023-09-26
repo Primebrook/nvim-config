@@ -40,13 +40,16 @@ vim.keymap.set("n", "gi", "<cmd>lua vim.lsp.buf.implementation()<CR>", { noremap
 vim.keymap.set("n", "gt", "<cmd>lua vim.lsp.buf.type_definition()<CR>", { noremap = true, silent = true })
 
 -- json formatting
-function convert_python_dict_to_json()
+function python_dict_to_json()
 	vim.api.nvim_command(":%s/'/\"/g")
 	vim.api.nvim_command(":%s/False/false/g")
 	vim.api.nvim_command(":%s/True/true/g")
 	vim.api.nvim_command(":%s/None/null/g")
 end
 
-vim.keymap.set("n", "<leader>cj", ":lua convert_python_dict_to_json()<CR>", { noremap = true, silent = true })
+vim.keymap.set("n", "<leader>tj", ":lua python_dict_to_json()<CR>", { noremap = true, silent = true }) -- tj == "to json"
 
-vim.keymap.set("n", "<leader>jq", "<cmd>%!jq --indent 4 '.'<CR>", { noremap = true, silent = true })
+vim.keymap.set("n", "<leader>jf", "<cmd>%!jq --indent 4 '.'<CR>", { noremap = true, silent = true })
+
+-- sql formatting
+vim.keymap.set("n", "<leader>sf", ":<C-U>%!pg_format -<CR>", { noremap = true, silent = true })

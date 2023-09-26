@@ -62,6 +62,9 @@ require("packer").startup(function(use)
 
 	-- treesitter for syntax highlighting and more
 	use({ "nvim-treesitter/nvim-treesitter" })
+
+	-- harpoon
+	use({ "ThePrimeagen/harpoon" })
 end)
 
 require("nvim-treesitter.configs").setup({
@@ -84,6 +87,18 @@ lspconfig.clangd.setup({
 	cmd = { vim.fn.expand("/Library/Developer/CommandLineTools/usr/bin/clangd") },
 })
 
+-- Setup harpoon
+require("harpoon").setup({
+	global_settings = {
+		save_on_toggle = true,
+		save_on_change = true,
+	},
+    menu = {
+        width = vim.api.nvim_win_get_width(0) - 4,
+    }
+})
+
+-- Setup completion.
 local cmp = require("cmp")
 
 cmp.setup({

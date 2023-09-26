@@ -93,9 +93,9 @@ require("harpoon").setup({
 		save_on_toggle = true,
 		save_on_change = true,
 	},
-    menu = {
-        width = vim.api.nvim_win_get_width(0) - 4,
-    }
+	menu = {
+		width = vim.api.nvim_win_get_width(0) - 4,
+	},
 })
 
 -- Setup completion.

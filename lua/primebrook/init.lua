@@ -65,7 +65,13 @@ require("packer").startup(function(use)
 
 	-- harpoon
 	use({ "ThePrimeagen/harpoon" })
+
+	-- fugitive
+	use({ "tpope/vim-fugitive" })
 end)
+
+-- fugitive
+vim.g.fugitive_diff_split = "vertical"
 
 require("nvim-treesitter.configs").setup({
 	ensure_installed = { "c", "lua", "vim", "elixir", "python", "rust", "bash", "json" },

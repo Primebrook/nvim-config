@@ -66,6 +66,6 @@ function git_push_current_branch()
 	vim.cmd("Git push --set-upstream origin " .. current_branch)
 end
 
-vim.keymap.set("n", "<leader>gP", ":lua git_push_current_branch", { noremap = true })
+vim.keymap.set("n", "<leader>gP", ":lua git_push_current_branch()<CR>", { noremap = true })
 vim.keymap.set("n", "<leader>gl", ":Git log<CR>", { noremap = true, silent = true })
 vim.keymap.set("n", "<leader>gb", ":Git blame<CR>", { noremap = true, silent = true })

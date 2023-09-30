@@ -53,3 +53,19 @@ vim.keymap.set("n", "<leader>jf", "<cmd>%!jq --indent 4 '.'<CR>", { noremap = tr
 
 -- sql formatting
 vim.keymap.set("n", "<leader>sf", ":<C-U>%!pg_format -<CR>", { noremap = true, silent = true })
+
+-- fugitive
+vim.keymap.set("n", "<leader>gs", ":Git<CR>", { noremap = true, silent = true })
+vim.keymap.set("n", "<leader>gd", ":Gvdiffsplit<CR>", { noremap = true, silent = true })
+vim.keymap.set("n", "<leader>gbr", ":Git branch<Space>", { noremap = true, silent = true })
+vim.keymap.set("n", "<leader>gch", ":Git checkout<Space>", { noremap = true, silent = true })
+vim.keymap.set("n", "<leader>gm", ":Git merge<Space>", { noremap = true, silent = true })
+vim.keymap.set("n", "<leader>gp", ":Git push<CR>", { noremap = true, silent = true })
+function git_push_current_branch()
+	local current_branch = vim.fn.system("git rev-parse --abbrev-ref HEAD")
+	vim.cmd("Git push --set-upstream origin " .. current_branch)
+end
+
+vim.keymap.set("n", "<leader>gP", ":lua git_push_current_branch", { noremap = true })
+vim.keymap.set("n", "<leader>gl", ":Git log<CR>", { noremap = true, silent = true })
+vim.keymap.set("n", "<leader>gb", ":Git blame<CR>", { noremap = true, silent = true })

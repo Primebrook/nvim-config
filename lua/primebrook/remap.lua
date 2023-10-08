@@ -1,12 +1,6 @@
 vim.g.mapleader = " "
 
-vim.keymap.set("n", "<leader>pv", function()
-	vim.cmd("Ex")
-end, {})
-
-vim.keymap.set("n", "<leader>ff", function()
-	vim.cmd("Telescope find_files hidden=true")
-end, {})
+vim.keymap.set("n", "<leader>pv", ":Ex<CR>", { noremap = true, silent = true })
 
 -- Copying to system clipboard
 vim.keymap.set("n", "Y", '"+yy', { noremap = true, silent = true })
@@ -25,6 +19,9 @@ vim.keymap.set("n", "<leader>se", "<C-w>=") -- make split windows equal width
 vim.keymap.set("n", "<leader>sx", ":close<CR>") -- close current split window
 
 -- plugin keymaps
+
+-- telescope
+vim.keymap.set("n", "<leader>ff", ":Telescope find_files hidden=true<CR>", { noremap = true, silent = true })
 
 -- nvim-tree
 vim.keymap.set("n", "<leader>e", ":NvimTreeToggle<CR>", { noremap = true, silent = true })

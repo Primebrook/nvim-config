@@ -17,6 +17,13 @@ vim.keymap.set("n", "<leader>sv", "<C-w>v") -- split window vertically
 vim.keymap.set("n", "<leader>sh", "<C-w>s") -- split window horizontally
 vim.keymap.set("n", "<leader>se", "<C-w>=") -- make split windows equal width
 vim.keymap.set("n", "<leader>sx", ":close<CR>") -- close current split window
+vim.keymap.set("n", "<leader>sm", ":MaximizerToggle<CR>", { noremap = true, silent = true }) -- vim-maximizer
+
+vim.keymap.set("n", "<leader>rh", "<C-w><") -- decrease window width
+vim.keymap.set("n", "<leader>rl", "<C-w>>") -- increase window width
+vim.keymap.set("n", "<leader>rj", "<C-w>+") -- increase window height
+vim.keymap.set("n", "<leader>rk", "<C-w>-") -- decrease window height
+
 
 -- plugin keymaps
 
@@ -26,10 +33,7 @@ vim.keymap.set("n", "<leader>ff", ":Telescope find_files hidden=true<CR>", { nor
 -- nvim-tree
 vim.keymap.set("n", "<leader>e", ":NvimTreeToggle<CR>", { noremap = true, silent = true })
 
--- vim-maximizer
-vim.keymap.set("n", "<leader>sm", ":MaximizerToggle<CR>", { noremap = true, silent = true })
-
--- lsp keybindings (note: ideally these keybindings should only be alive for buffers which have lsp's attached to them)
+-- lsp keybindings (ideally these keybindings should only be alive for buffers which have lsp's attached to them)
 vim.keymap.set("n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>", { noremap = true, silent = true })
 vim.keymap.set("n", "gr", "<cmd>lua vim.lsp.buf.references()<CR>", { noremap = true, silent = true })
 vim.keymap.set("n", "gi", "<cmd>lua vim.lsp.buf.implementation()<CR>", { noremap = true, silent = true })

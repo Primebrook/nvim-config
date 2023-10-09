@@ -82,6 +82,11 @@ require("nvim-treesitter.configs").setup({
 	},
 })
 
+-- Co-pilot
+vim.g.copilot_filetypes = {
+	c = false,
+}
+
 -- Setup language servers.
 local lspconfig = require("lspconfig")
 lspconfig.pyright.setup({})

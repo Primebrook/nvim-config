@@ -85,6 +85,7 @@ require("nvim-treesitter.configs").setup({
 -- Co-pilot
 vim.g.copilot_filetypes = {
 	c = false,
+	['c'] = false
 }
 
 -- Setup language servers.

@@ -30,7 +30,15 @@ vim.keymap.set("n", "<leader>rk", "<C-w>-") -- decrease window height
 -- PLUGIN KEYMAPS
 
 -- Telescope
-vim.keymap.set("n", "<leader>ff", ":Telescope find_files hidden=true<CR>", { noremap = true, silent = true })
+local builtin = require("telescope.builtin")
+
+vim.keymap.set("n", "<leader>ff", function()
+	builtin.find_files({ hidden = true })
+end, { noremap = true, silent = true })
+vim.keymap.set("n", "<leader>pf", builtin.find_files, {})
+vim.keymap.set("n", "<C-p>", builtin.git_files, {})
+vim.keymap.set("n", "<leader>ps", builtin.grep_string, {})
+vim.keymap.set("n", "<leader>pw", builtin.live_grep, {})
 
 -- Nvim-Tree
 vim.keymap.set("n", "<leader>e", ":NvimTreeToggle<CR>", { noremap = true, silent = true })

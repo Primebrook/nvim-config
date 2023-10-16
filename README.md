@@ -14,4 +14,4 @@ I use `stylua` for formatting of lua files.
 1. NeoVim
 2. Ripgrep (`brew install ripgrep`)
 3. jq (JSON formatter) (`brew install jq`)
-4. Language Servers (`pyright`, `clangd`, `elixirls` & `rust_analyzer`)
+4. Language Servers (`pyright`, `clangd`, `elixirls`, `rust_analyzer`, `solargraph`)

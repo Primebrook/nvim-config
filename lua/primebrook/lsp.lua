@@ -8,3 +8,10 @@ lspconfig.elixirls.setup({
 lspconfig.clangd.setup({
 	cmd = { vim.fn.expand("/Library/Developer/CommandLineTools/usr/bin/clangd") },
 })
+lspconfig.solargraph.setup({
+	settings = {
+		solargraph = {
+			diagnostics = true,
+		},
+	},
+})

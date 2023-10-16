@@ -1,3 +1,10 @@
-My current Neovim config - it's a mess rn, to be cleaned up later.
+## My NeoVim Config
 
-Using `stylua` to format `.lua` files.
+Plugin specific configs can be found in `lua/primebrook/<plugin_name>.lua`.
+
+Key remaps can be found in `lua/primebrook/remap.lua`
+
+I use `Packer` for plugin management.
+
+I use `stylua` for formatting of lua files.
+

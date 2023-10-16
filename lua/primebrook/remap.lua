@@ -7,9 +7,12 @@ vim.keymap.set("n", "Y", '"+yy', { noremap = true, silent = true })
 vim.keymap.set("v", "Y", '"+y', { noremap = true, silent = true })
 
 -- Copying current filepath to clipboard
+local function copy_to_clipboard(str)
+	vim.fn.system("echo " .. str .. " | pbcopy")
+end
+
 vim.keymap.set("n", "<leader>fp", function()
-	local filepath = vim.fn.expand("%:p")
-	vim.fn.system("echo " .. filepath .. " | pbcopy")
+	copy_to_clipboard(vim.fn.expand("%:p"))
 end, { noremap = true, silent = true })
 
 -- Managing Window Panes
@@ -24,23 +27,22 @@ vim.keymap.set("n", "<leader>rl", "<C-w>>") -- increase window width
 vim.keymap.set("n", "<leader>rj", "<C-w>+") -- increase window height
 vim.keymap.set("n", "<leader>rk", "<C-w>-") -- decrease window height
 
+-- PLUGIN KEYMAPS
 
--- plugin keymaps
-
--- telescope
+-- Telescope
 vim.keymap.set("n", "<leader>ff", ":Telescope find_files hidden=true<CR>", { noremap = true, silent = true })
 
--- nvim-tree
+-- Nvim-Tree
 vim.keymap.set("n", "<leader>e", ":NvimTreeToggle<CR>", { noremap = true, silent = true })
 
--- lsp keybindings (ideally these keybindings should only be alive for buffers which have lsp's attached to them)
+-- LSP keybindings (ideally these keybindings should only be alive for buffers which have lsp's attached to them)
 vim.keymap.set("n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>", { noremap = true, silent = true })
 vim.keymap.set("n", "gr", "<cmd>lua vim.lsp.buf.references()<CR>", { noremap = true, silent = true })
 vim.keymap.set("n", "gi", "<cmd>lua vim.lsp.buf.implementation()<CR>", { noremap = true, silent = true })
 -- vim.keymap.set("n", "K", "<cmd>lua vim.lsp.buf.hover()<CR>", { noremap = true, silent = true })
 vim.keymap.set("n", "gt", "<cmd>lua vim.lsp.buf.type_definition()<CR>", { noremap = true, silent = true })
 
--- json formatting
+-- JSON Formatting
 function python_dict_to_json()
 	vim.api.nvim_command(":%s/'/\"/ge")
 	vim.api.nvim_command(":%s/False/false/ge")
@@ -53,7 +55,7 @@ vim.keymap.set("n", "<leader>jf", "<cmd>%!jq --indent 4 '.'<CR>", { noremap = tr
 -- sql formatting
 vim.keymap.set("n", "<leader>sf", ":<C-U>%!pg_format -<CR>", { noremap = true, silent = true })
 
--- fugitive
+-- Fugitive
 vim.keymap.set("n", "<leader>gs", ":Git<CR>", { noremap = true, silent = true })
 vim.keymap.set("n", "<leader>gd", ":Gvdiffsplit<CR>", { noremap = true, silent = true })
 vim.keymap.set("n", "<leader>gbr", ":Git branch<Space>", { noremap = true, silent = true })
@@ -67,3 +69,11 @@ end
 vim.keymap.set("n", "<leader>gP", ":lua git_push_current_branch()<CR>", { noremap = true })
 vim.keymap.set("n", "<leader>gl", ":Git log<CR>", { noremap = true, silent = true })
 vim.keymap.set("n", "<leader>gb", ":Git blame<CR>", { noremap = true, silent = true })
+
+-- Harpoon
+local mark = require("harpoon.mark")
+local ui = require("harpoon.ui")
+
+vim.keymap.set("n", "<leader>a", mark.add_file, { noremap = true, silent = true })
+vim.keymap.set("n", "<C-e>", ui.toggle_quick_menu, { noremap = true, silent = true })
+vim.keymap.set("n", "<leader>ha", ui.toggle_quick_menu, { noremap = true, silent = true })

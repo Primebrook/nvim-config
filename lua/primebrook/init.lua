@@ -5,7 +5,6 @@ require("primebrook.lsp")
 require("primebrook.completion")
 require("primebrook.nvim_tree")
 require("primebrook.harpoon")
-require("primebrook.telescope")
 
 -- GENERAL
 vim.wo.relativenumber = true

@@ -40,7 +40,6 @@ require("packer").startup(function(use)
 
 	--maximizes and restores current window
 	use({ "szw/vim-maximizer" })
-
 	-- lsp config
 	use({ "neovim/nvim-lspconfig" })
 
@@ -66,4 +65,14 @@ require("packer").startup(function(use)
 
 	-- fugitive
 	use({ "tpope/vim-fugitive" })
+
+	-- ChatGPT.nvim
+	use({
+		"jackMort/ChatGPT.nvim",
+		requires = {
+			"MunifTanjim/nui.nvim",
+			"nvim-lua/plenary.nvim",
+			"nvim-telescope/telescope.nvim",
+		},
+	})
 end)

@@ -5,6 +5,7 @@ require("primebrook.lsp")
 require("primebrook.completion")
 require("primebrook.nvim_tree")
 require("primebrook.harpoon")
+require("primebrook.chatgpt")
 
 -- GENERAL
 vim.wo.relativenumber = true

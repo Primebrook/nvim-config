@@ -21,6 +21,7 @@ vim.cmd([[ hi NormalNC guibg=NONE ctermbg=NONE ]])
 vim.cmd([[ hi VertSplit guibg=NONE ctermbg=NONE ]])
 vim.cmd([[ hi Folded guibg=NONE ctermbg=NONE ]])
 vim.cmd([[ hi SignColumn guibg=NONE ctermbg=NONE ]])
+vim.cmd([[ hi Visual ctermfg=White ctermbg=Grey guibg=#333333 guifg=#ffffff ]])
 
 -- FUGITIVE
 vim.g.fugitive_diff_split = "vertical"

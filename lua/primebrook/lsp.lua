@@ -15,3 +15,4 @@ lspconfig.solargraph.setup({
 		},
 	},
 })
+lspconfig.tsserver.setup({})

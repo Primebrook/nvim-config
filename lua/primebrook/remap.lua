@@ -32,13 +32,13 @@ vim.keymap.set("n", "<leader>rk", "<C-w>-") -- decrease window height
 -- Telescope
 local builtin = require("telescope.builtin")
 
-vim.keymap.set("n", "<leader>ff", function()
-	builtin.find_files({ hidden = true })
-end, { noremap = true, silent = true })
+--vim.keymap.set("n", "<leader>ff", function()
+--	builtin.find_files({ hidden = true })
+--end, { noremap = true, silent = true })
 vim.keymap.set("n", "<leader>pf", builtin.find_files, {})
 vim.keymap.set("n", "<C-p>", builtin.git_files, {})
-vim.keymap.set("n", "<leader>ps", builtin.grep_string, {})
-vim.keymap.set("n", "<leader>pw", builtin.live_grep, {})
+vim.keymap.set("n", "<leader>pw", builtin.grep_string, {})
+vim.keymap.set("n", "<leader>ps", builtin.live_grep, {})
 
 -- Nvim-Tree
 vim.keymap.set("n", "<leader>e", ":NvimTreeToggle<CR>", { noremap = true, silent = true })
@@ -77,6 +77,10 @@ end
 vim.keymap.set("n", "<leader>gP", ":lua git_push_current_branch()<CR>", { noremap = true })
 vim.keymap.set("n", "<leader>gl", ":Git log<CR>", { noremap = true, silent = true })
 vim.keymap.set("n", "<leader>gb", ":Git blame<CR>", { noremap = true, silent = true })
+
+-- Txt list formatting
+vim.keymap.set("n", "<leader>tf", ":%s/,/\r/ge<CR>", { noremap = true, silent = true })
+
 
 -- Harpoon
 local mark = require("harpoon.mark")

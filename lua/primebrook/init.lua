@@ -5,6 +5,7 @@ require("primebrook.lsp")
 require("primebrook.completion")
 require("primebrook.nvim_tree")
 require("primebrook.harpoon")
+require("primebrook.oil")
 require("primebrook.chatgpt")
 
 -- GENERAL
@@ -23,8 +24,8 @@ local function set_indentation()
 end
 
 vim.api.nvim_create_autocmd("FileType", {
-    pattern = {"javascript", "typescript", "javascriptreact", "typescriptreact", "ruby"},
-    callback = set_indentation
+	pattern = { "javascript", "typescript", "javascriptreact", "typescriptreact", "ruby" },
+	callback = set_indentation,
 })
 
 -- THEME

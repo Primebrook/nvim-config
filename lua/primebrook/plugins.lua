@@ -75,4 +75,7 @@ require("packer").startup(function(use)
 			"nvim-telescope/telescope.nvim",
 		},
 	})
+
+	-- oil nvim
+	use({ "stevearc/oil.nvim" })
 end)

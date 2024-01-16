@@ -17,7 +17,7 @@ nvimtree.setup({
 	},
 	git = {
 		enable = true,
-		ignore = true, -- set to false to show git ignored files
+		ignore = false, -- set to false to show git ignored files
 		timeout = 500,
 	},
 })

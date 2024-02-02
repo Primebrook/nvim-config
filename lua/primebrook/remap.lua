@@ -78,6 +78,9 @@ vim.keymap.set("n", "<leader>gb", ":Git blame<CR>", { noremap = true, silent = t
 -- Txt list formatting
 vim.keymap.set("n", "<leader>tf", ":%s/,/\r/ge<CR>", { noremap = true, silent = true })
 
+-- Mix format
+vim.keymap.set("n", "<leader>ff", ":!mix format<CR>", { noremap = true, silent = true })
+
 -- Harpoon
 local mark = require("harpoon.mark")
 local ui = require("harpoon.ui")

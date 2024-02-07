@@ -3,10 +3,8 @@ require("primebrook.plugins")
 require("primebrook.treesitter")
 require("primebrook.lsp")
 require("primebrook.completion")
-require("primebrook.nvim_tree")
 require("primebrook.harpoon")
 require("primebrook.oil")
-require("primebrook.chatgpt")
 
 -- GENERAL
 vim.wo.relativenumber = true

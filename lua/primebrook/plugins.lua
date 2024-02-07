@@ -32,14 +32,12 @@ require("packer").startup(function(use)
 		requires = { { "nvim-lua/plenary.nvim" } },
 	})
 
-	-- file explorer
-	use({ "nvim-tree/nvim-tree.lua" })
-
 	-- tmux & splot window navigation
 	use({ "christoomey/vim-tmux-navigator" })
 
 	--maximizes and restores current window
 	use({ "szw/vim-maximizer" })
+
 	-- lsp config
 	use({ "neovim/nvim-lspconfig" })
 
@@ -65,16 +63,6 @@ require("packer").startup(function(use)
 
 	-- fugitive
 	use({ "tpope/vim-fugitive" })
-
-	-- ChatGPT.nvim
-	use({
-		"jackMort/ChatGPT.nvim",
-		requires = {
-			"MunifTanjim/nui.nvim",
-			"nvim-lua/plenary.nvim",
-			"nvim-telescope/telescope.nvim",
-		},
-	})
 
 	-- oil nvim
 	use({ "stevearc/oil.nvim" })

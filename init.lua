@@ -1,1 +1,1 @@
-require("primebrook")
+require("primebrook").setup()

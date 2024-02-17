@@ -1,6 +1,15 @@
 local M = {}
 
 function M.setup()
+	local function hidden_files(name, _bufnr)
+		local hidden_name = {
+			[".."] = true,
+			[".git"] = true,
+			[".vscode"] = true,
+		}
+		return hidden_name[name] or false
+	end
+
 	require("oil").setup({
 		use_default_keymaps = false,
 		keymaps = {
@@ -9,9 +18,7 @@ function M.setup()
 		},
 		view_options = {
 			show_hidden = false,
-			is_hidden_file = function(name, bufnr)
-				return name == ".." or name == ".git" or name == ".vscode"
-			end,
+			is_hidden_file = hidden_files,
 		},
 	})
 end

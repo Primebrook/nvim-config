@@ -37,7 +37,7 @@ function M.setup()
 	vim.keymap.set("n", "<leader>w", builtin.grep_string, {})
 	vim.keymap.set("n", "<leader>ps", builtin.live_grep, {})
 
-	-- LSP keybindings (ideally these keybindings should only be alive for buffers which have lsp's attached to them)
+	-- LSP keybindings
 	vim.keymap.set("n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>", { noremap = true, silent = true })
 	vim.keymap.set("n", "gr", "<cmd>lua vim.lsp.buf.references()<CR>", { noremap = true, silent = true })
 	vim.keymap.set("n", "gi", "<cmd>lua vim.lsp.buf.implementation()<CR>", { noremap = true, silent = true })

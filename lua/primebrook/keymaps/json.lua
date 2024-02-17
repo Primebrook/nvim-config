@@ -8,7 +8,7 @@ function M.setup()
 		vim.api.nvim_command(":%s/None/null/ge")
 	end
 	vim.keymap.set("n", "<leader>tj", ":lua python_dict_to_json()<CR>", { noremap = true, silent = true }) -- tj == "to json"
-	vim.keymap.set("n", "<leader>fj", "<cmd>%!jq --indent 4 '.'<CR>", { noremap = true, silent = true })
+	vim.keymap.set("n", "<leader>ff", "<cmd>%!jq --indent 4 '.'<CR>", { noremap = true, silent = true })
 end
 
 return M

@@ -41,7 +41,7 @@ function M.setup()
 	vim.keymap.set("n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>", { noremap = true, silent = true })
 	vim.keymap.set("n", "gr", "<cmd>lua vim.lsp.buf.references()<CR>", { noremap = true, silent = true })
 	vim.keymap.set("n", "gi", "<cmd>lua vim.lsp.buf.implementation()<CR>", { noremap = true, silent = true })
-	-- vim.keymap.set("n", "K", "<cmd>lua vim.lsp.buf.hover()<CR>", { noremap = true, silent = true })
+	vim.keymap.set("n", "K", "<cmd>lua vim.lsp.buf.hover()<CR>", { noremap = true, silent = true })
 	vim.keymap.set("n", "gt", "<cmd>lua vim.lsp.buf.type_definition()<CR>", { noremap = true, silent = true })
 
 	-- Fugitive
@@ -58,9 +58,6 @@ function M.setup()
 	vim.keymap.set("n", "<leader>gP", ":lua git_push_current_branch()<CR>", { noremap = true })
 	vim.keymap.set("n", "<leader>gl", ":Git log<CR>", { noremap = true, silent = true })
 	vim.keymap.set("n", "<leader>gb", ":Git blame<CR>", { noremap = true, silent = true })
-
-	-- Txt list formatting
-	vim.keymap.set("n", "<leader>tf", ":%s/,/\r/ge<CR>", { noremap = true, silent = true })
 
 	-- Harpoon
 	local mark = require("harpoon.mark")

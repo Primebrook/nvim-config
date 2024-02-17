@@ -10,7 +10,7 @@ function M.setup()
 		view_options = {
 			show_hidden = false,
 			is_hidden_file = function(name, bufnr)
-				return vim.startswith(name, "..") or name == ".git" or name == ".vscode"
+				return name == ".." or name == ".git" or name == ".vscode"
 			end,
 		},
 	})

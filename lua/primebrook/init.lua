@@ -25,7 +25,7 @@ function M.setup()
 	end
 
 	vim.api.nvim_create_autocmd("FileType", {
-		pattern = { "javascript", "typescript", "javascriptreact", "typescriptreact", "ruby" },
+		pattern = { "sh", "javascript", "typescript", "javascriptreact", "typescriptreact", "ruby" },
 		callback = set_indentation,
 	})
 

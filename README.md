@@ -1,4 +1,4 @@
-# My NeoVim Config
+# My Neovim Config
 
 Plugin specific configs can be found in `lua/primebrook/<plugin_name>.lua`.
 

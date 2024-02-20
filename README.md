@@ -18,11 +18,11 @@ I use `stylua` for formatting of lua files.
 5. Language Servers (`elixirls`, `pyright`, `clangd`)
 
 
-Language Servers Setup:
+## Language Servers Setup:
 
 e.g. elixir:
 
-1. Download latest ElixirLS from (here)[https://github.com/elixir-lsp/elixir-ls/releases].
+1. Download latest ElixirLS from [here](https://github.com/elixir-lsp/elixir-ls/releases).
     1. Unzip in a suitable location:
     ```
     unzip /Users/brook/Downloads/elixir-ls-v0.19.0.zip -d ~/.bin/elixir-ls-v0.19.0
@@ -31,7 +31,7 @@ e.g. elixir:
     ```
     chmod +x ~/.bin/elixir-ls-v0.19.0/language_server.sh
     ```
-2. Link the language server start scrip location in lsp.lua config.
+2. Link the language server start script location in lsp.lua config.
 
 # To Do
 

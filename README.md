@@ -1,6 +1,7 @@
 
-<pre align="center">
 # My Neovim Config
+
+<pre align="center">
       ,l;             c,      
    .:ooool'           loo:.   
  .,oooooooo:.         looooc, 

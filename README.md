@@ -1,6 +1,6 @@
-# My Neovim Config
 
 <pre align="center">
+# My Neovim Config
       ,l;             c,      
    .:ooool'           loo:.   
  .,oooooooo:.         looooc, 

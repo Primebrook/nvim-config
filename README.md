@@ -55,4 +55,4 @@ e.g. elixir:
 # To Do
 
 - [ ] Have telescope's find_files include dotfiles
-- [ ] keymap to navigate launch file on github from local neovim buffer
+- [x] keymap to navigate launch file on github from local neovim buffer

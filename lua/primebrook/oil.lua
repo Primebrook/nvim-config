@@ -12,6 +12,7 @@ function M.setup()
 
 	require("oil").setup({
 		use_default_keymaps = false,
+		skip_confirm_for_simple_edits = true,
 		keymaps = {
 			["<CR>"] = "actions.select",
 			["-"] = "actions.parent",

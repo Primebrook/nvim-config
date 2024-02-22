@@ -3,6 +3,9 @@ local M = {}
 function M.setup()
 	vim.g.mapleader = " "
 
+	-- quit all buffer
+	vim.keymap.set("n", "<leader>q", ":qa!<CR>", { noremap = true, silent = true })
+
 	-- Copying to system clipboard
 	vim.keymap.set("n", "Y", '"+yy', { noremap = true, silent = true })
 	vim.keymap.set("v", "Y", '"+y', { noremap = true, silent = true })

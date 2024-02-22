@@ -19,6 +19,16 @@ function M.setup()
 		copy_to_clipboard(vim.fn.expand("%:p"))
 	end, { noremap = true, silent = true })
 
+	-- Open file in github
+	local function open_in_github()
+		local file = vim.fn.expand("%:p")
+		-- WARNING: The path to the script is hardcoded here. Will probably need to change this in the future.
+		local command = "~/.config/nvim/scripts/open_in_github.sh " .. file
+		vim.fn.system(command)
+	end
+
+	vim.keymap.set("n", "<leader>fg", open_in_github, { noremap = true, silent = true })
+
 	-- Managing Window Panes
 	vim.keymap.set("n", "<leader>sv", "<C-w>v") -- split window vertically
 	vim.keymap.set("n", "<leader>sh", "<C-w>s") -- split window horizontally

@@ -22,8 +22,9 @@ function M.setup()
 	-- Open file in github
 	local function open_in_github()
 		local file = vim.fn.expand("%:p")
+		local line = vim.fn.line(".")
 		-- WARNING: The path to the script is hardcoded here. Will probably need to change this in the future.
-		local command = "~/.config/nvim/scripts/open_in_github.sh " .. file
+		local command = "~/.config/nvim/scripts/open_in_github.sh " .. file .. " " .. line
 		vim.fn.system(command)
 	end
 

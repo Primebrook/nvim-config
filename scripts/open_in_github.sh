@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/zsh
 
 # Filepath is the first argument to the script
 FILEPATH="$1"

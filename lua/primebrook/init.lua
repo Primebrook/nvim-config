@@ -10,7 +10,7 @@ function M.setup()
 	require("primebrook.keymaps").setup()
 
 	-- GENERAL
-	vim.wo.relativenumber = true
+	vim.wo.relativenumber = false
 	vim.opt.number = true
 	vim.opt.tabstop = 4
 	vim.opt.softtabstop = 4
@@ -42,10 +42,7 @@ function M.setup()
 	vim.g.fugitive_diff_split = "vertical"
 
 	-- CO-PILOT
-	vim.g.copilot_filetypes = {
-		c = false, -- one of these works
-		["c"] = false,
-	}
+	vim.g.copilot_filetypes = { c = false }
 end
 
 return M

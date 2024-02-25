@@ -5,7 +5,7 @@ function M.setup()
 
 	lspconfig.pyright.setup({})
 	lspconfig.elixirls.setup({
-		cmd = { vim.fn.expand("~/.bin/elixir-ls/language_server.sh") },
+		cmd = { vim.fn.expand("~/.elixir-ls/language_server.sh") },
 	})
 	lspconfig.clangd.setup({
 		cmd = { vim.fn.expand("/Library/Developer/CommandLineTools/usr/bin/clangd") },

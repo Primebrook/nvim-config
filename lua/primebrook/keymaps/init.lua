@@ -10,6 +10,9 @@ function M.setup()
 	vim.keymap.set("n", "Y", '"+yy', { noremap = true, silent = true })
 	vim.keymap.set("v", "Y", '"+y', { noremap = true, silent = true })
 
+	-- Make cuurent file executable
+	vim.keymap.set("n", "<leader>fe", ":!chmod +x %<CR>", { noremap = true, silent = true })
+
 	-- Copying current filepath to clipboard
 	local function copy_to_clipboard(str)
 		vim.fn.system("echo " .. str .. " | pbcopy")

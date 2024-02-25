@@ -6,6 +6,11 @@ function M.setup()
 	-- Prefix w/ pipeline: visual selection
 	vim.keymap.set("v", "<leader>pp", ":'<,'>norm I|> <Esc>", { noremap = true, silent = true, buffer = true })
 
+	-- Remove pipeline prefix: current line
+	vim.keymap.set("n", "<leader>rp", ":%s/^|> //g<CR>", { noremap = true, silent = true, buffer = true })
+	-- Remove pipeline prefix: visual selection
+	vim.keymap.set("v", "<leader>rp", ":s/^|> //g<CR>", { noremap = true, silent = true, buffer = true })
+
 	-- Mix format
 	vim.keymap.set("n", "<leader>ff", ":!mix format<CR>", { noremap = true, silent = true, buffer = true })
 end

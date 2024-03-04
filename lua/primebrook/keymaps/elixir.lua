@@ -2,7 +2,7 @@ local M = {}
 
 function M.setup()
 	-- Prefix w/ pipeline: current line
-	vim.keymap.set("n", "<leader>pp", "I|> ", { noremap = true, silent = true, buffer = true })
+	vim.keymap.set("n", "<leader>pp", "I|> <Esc>", { noremap = true, silent = true, buffer = true })
 	-- Prefix w/ pipeline: visual selection
 	vim.keymap.set("v", "<leader>pp", ":'<,'>norm I|> <Esc>", { noremap = true, silent = true, buffer = true })
 
@@ -13,6 +13,10 @@ function M.setup()
 
 	-- Mix format
 	vim.keymap.set("n", "<leader>ff", ":!mix format<CR>", { noremap = true, silent = true, buffer = true })
+
+	-- Add binding
+	vim.keymap.set("n", "<leader>x", "orequire IEx ; IEx.pry<Esc>", { noremap = true, silent = true, buffer = true })
+	vim.keymap.set("n", "<leader>X", "Orequire IEx ; IEx.pry<Esc>", { noremap = true, silent = true, buffer = true })
 end
 
 return M

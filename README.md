@@ -34,7 +34,7 @@ I use `stylua` for formatting of lua files.
 3. jq (JSON formatter) (`brew install jq`)
 4. shfmt (shell file formatter) (`brew install shfmt`)
 4. gh (GitHub CLI) (`brew install gh`)
-5. Language Servers (`elixirls`, `pyright`, `clangd`)
+5. Language Servers (`elixirls`, `pyright`, `clangd`, `tsserver`)
 
 
 ## Language Servers Setup:

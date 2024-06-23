@@ -13,8 +13,11 @@ function M.setup()
 			"json",
 			"markdown",
 			"markdown_inline",
+			"yaml",
+			"javascript",
+			"typescript",
 		},
-		sync_install = false,
+		sync_install = true,
 		auto_install = true,
 		highlight = {
 			enable = true,

@@ -2,10 +2,18 @@ local M = {}
 
 function M.setup()
 	local lspconfig = require("lspconfig")
+	vim.lsp.set_log_level("debug")
+
 
 	lspconfig.pyright.setup({})
 	lspconfig.elixirls.setup({
 		cmd = { vim.fn.expand("~/.elixir-ls/language_server.sh") },
+		settings = {
+			elixirLS = {
+				dialyzerEnabled = true,
+				-- fetchDeps = false,
+			},
+		},
 	})
 	lspconfig.clangd.setup({
 		cmd = { vim.fn.expand("/Library/Developer/CommandLineTools/usr/bin/clangd") },

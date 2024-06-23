@@ -19,16 +19,15 @@ lllllllc        ,loooooool,:ol
       ,;             ;l;      
 </pre>
 
-- Plugin specific configs can be found in `lua/primebrook/<plugin_name>.lua`.
-
-- Key Remaps can be found in `lua/primebrook/remap.lua`.
-
-- Filetype specific configs can be found in `lua/primebrook/ftplugin/<filetype>.lua`.
-
 
 I use `Packer` for plugin management.
 
-I use `stylua` for formatting of lua files.
+- Plugin specific configs can be found in `lua/primebrook/<plugin_name>.lua`.
+- Key Remaps can be found in `lua/primebrook/remap.lua`.
+- Filetype specific configs can be found in `lua/primebrook/ftplugin/<filetype>.lua`.
+
+
+
 
 ## Dependencies
 

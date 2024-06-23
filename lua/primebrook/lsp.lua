@@ -4,7 +4,6 @@ function M.setup()
 	local lspconfig = require("lspconfig")
 	vim.lsp.set_log_level("debug")
 
-
 	lspconfig.pyright.setup({})
 	lspconfig.elixirls.setup({
 		cmd = { vim.fn.expand("~/.elixir-ls/language_server.sh") },

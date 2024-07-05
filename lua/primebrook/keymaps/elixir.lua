@@ -17,6 +17,9 @@ function M.setup()
 	-- Add binding
 	vim.keymap.set("n", "<leader>x", "orequire IEx ; IEx.pry<Esc>", { noremap = true, silent = true, buffer = true })
 	vim.keymap.set("n", "<leader>X", "Orequire IEx ; IEx.pry<Esc>", { noremap = true, silent = true, buffer = true })
+
+	-- Inline function
+	vim.keymap.set("n", "<leader>l", "^f)a,<Esc>$a:<Esc>Jjdd", { noremap = true, silent = true, buffer = true })
 end
 
 return M

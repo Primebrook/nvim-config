@@ -1,9 +1,6 @@
 local M = {}
 
 function M.setup()
-	-- format
-	vim.keymap.set("n", "<leader>ff", ":!stylua .<CR>", { noremap = true, silent = true, buffer = true })
-
 	-- Commenting
 	function toggle_comment()
 		-- Get the range of selected lines in visual mode
@@ -13,12 +10,12 @@ function M.setup()
 		-- Process each line in the range
 		for line_num = start_line, end_line do
 			local line = vim.api.nvim_buf_get_lines(0, line_num - 1, line_num, false)[1]
-			if line:match("^%s*--") then
+			if line:match("^%s*//") then
 				-- Uncomment the line
-				line = line:gsub("^%s*--", "")
+				line = line:gsub("^%s*//", "")
 			else
 				-- Comment the line
-				line = "--" .. line
+				line = "//" .. line
 			end
 			vim.api.nvim_buf_set_lines(0, line_num - 1, line_num, false, { line })
 		end

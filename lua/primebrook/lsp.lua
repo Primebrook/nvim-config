@@ -2,7 +2,7 @@ local M = {}
 
 function M.setup()
 	local lspconfig = require("lspconfig")
-	vim.lsp.set_log_level("debug")
+	vim.lsp.set_log_level("warn")
 
 	lspconfig.pyright.setup({})
 	lspconfig.elixirls.setup({

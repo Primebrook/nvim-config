@@ -1,6 +1,9 @@
 local M = {}
 
 function M.setup()
+	-- Clang format
+	vim.keymap.set("n", "<leader>ff", ":!make format<CR>", { noremap = true, silent = true, buffer = true })
+
 	-- Commenting
 	function toggle_comment()
 		-- Get the range of selected lines in visual mode

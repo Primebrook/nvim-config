@@ -56,3 +56,12 @@ e.g. elixir:
     chmod +x ~/.elixir-ls/language_server.sh
     ```
 2. Link the language server start script location in lsp.lua config.
+
+
+Language Servers:
+
+- `elixirls` (Elixir)
+- `pyright` (Python)
+- `clangd` (C/C++)
+- `tsserver` (TypeScript)
+- `marksman` (Markdown)

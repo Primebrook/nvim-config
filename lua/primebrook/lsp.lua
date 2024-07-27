@@ -27,6 +27,12 @@ function M.setup()
 		filetypes = { "typescript", "typescriptreact", "javascript", "javascriptreact" },
 		cmd = { "typescript-language-server", "--stdio" },
 	})
+
+	-- Marksman LSP for Markdown
+	lspconfig.marksman.setup({
+		cmd = { "marksman", "server" },
+		filetypes = { "markdown" },
+	})
 end
 
 return M

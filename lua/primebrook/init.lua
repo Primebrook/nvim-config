@@ -15,6 +15,7 @@ function M.setup()
 	vim.opt.tabstop = 4
 	vim.opt.softtabstop = 4
 	vim.opt.shiftwidth = 4
+	vim.opt.guicursor = "n-v-i-c:block-Cursor"
 
 	-- INDENTATION
 	local function set_indentation()
@@ -42,7 +43,7 @@ function M.setup()
 	vim.g.fugitive_diff_split = "vertical"
 
 	-- CO-PILOT
-	vim.g.copilot_filetypes = { c = false }
+	vim.g.copilot_filetypes = { c = false, markdown = false }
 end
 
 return M

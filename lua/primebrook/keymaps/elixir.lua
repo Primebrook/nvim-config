@@ -19,7 +19,7 @@ function M.setup()
 	vim.keymap.set("n", "<leader>X", "Orequire IEx ; IEx.pry<Esc>", { noremap = true, silent = true, buffer = true })
 
 	-- Inline function
-	vim.keymap.set("n", "<leader>l", "^f)a,<Esc>$a:<Esc>Jjdd", { noremap = true, silent = true, buffer = true })
+	vim.keymap.set("n", "<leader>l", "^EEa,<Esc>$a:<Esc>Jjdd", { noremap = true, silent = true, buffer = true })
 
 	-- Commenting
 	function toggle_comment()

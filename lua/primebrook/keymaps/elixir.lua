@@ -44,6 +44,9 @@ function M.setup()
 	-- Map the function to a key in normal and visual mode
 	vim.api.nvim_set_keymap("n", "<leader>c", ":lua toggle_comment()<CR>", { noremap = true, silent = true })
 	vim.api.nvim_set_keymap("x", "<leader>c", ":'<,'>lua toggle_comment()<CR>", { noremap = true, silent = true })
+
+	-- Make all private functions public in a file
+	vim.api.nvim_set_keymap("n", "<leader>pu", ":%s/ defp / def /g<CR>", { noremap = true, silent = true })
 end
 
 return M

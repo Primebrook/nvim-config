@@ -8,6 +8,7 @@ function M.setup()
 	require("primebrook.harpoon").setup()
 	require("primebrook.oil").setup()
 	require("primebrook.keymaps").setup()
+	require("primebrook.vim_dadbod").setup()
 
 	-- GENERAL
 	vim.wo.relativenumber = false

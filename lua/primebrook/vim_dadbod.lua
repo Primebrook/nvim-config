@@ -10,6 +10,9 @@ function M.setup()
 	vim.g.dbs = {
 		data_api_production = string.format("postgresql://%s:%s@%s:%s/%s", user, password, host, port, db_name),
 	}
+
+	-- Set a custom keymap for saving queries in vim-dadbod-ui
+    vim.api.nvim_set_keymap('n', '<Leader>s', '<Plug>(DBUI_SaveQuery)', { noremap = true, silent = true })
 end
 
 return M

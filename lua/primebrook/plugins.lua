@@ -79,6 +79,10 @@ function M.setup()
 			end,
 			ft = { "markdown" },
 		})
+
+		-- vim dadbod stuff
+		use({ "tpope/vim-dadbod" })
+		use({ "kristijanhusak/vim-dadbod-ui" })
 	end)
 end
 

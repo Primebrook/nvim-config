@@ -12,7 +12,7 @@ function M.setup()
 	}
 
 	-- Set a custom keymap for saving queries in vim-dadbod-ui
-    vim.api.nvim_set_keymap('n', '<Leader>s', '<Plug>(DBUI_SaveQuery)', { noremap = true, silent = true })
+	vim.api.nvim_set_keymap("n", "<Leader>s", "<Plug>(DBUI_SaveQuery)", { noremap = true, silent = true })
 end
 
 return M

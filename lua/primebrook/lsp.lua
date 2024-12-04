@@ -2,9 +2,19 @@ local M = {}
 
 function M.setup()
 	local lspconfig = require("lspconfig")
-	vim.lsp.set_log_level("warn")
+	vim.lsp.set_log_level("debug")
 
-	lspconfig.pyright.setup({})
+	lspconfig.pyright.setup({
+		settings = {
+			python = {
+				pythonPath = "/Users/brook/.pyenv/versions/garmin/bin/python",
+				analysis = {
+					autoSearchPaths = true,
+					useLibraryCodeForTypes = true,
+				},
+			},
+		},
+	})
 	lspconfig.elixirls.setup({
 		cmd = { vim.fn.expand("~/.elixir-ls/language_server.sh") },
 		settings = {
@@ -19,14 +29,15 @@ function M.setup()
 	})
 
 	-- TypeScript and JavaScript LSP
-	lspconfig.tsserver.setup({
-		on_attach = function(client)
-			client.resolved_capabilities.document_formatting = false
-			client.resolved_capabilities.document_range_formatting = false
-		end,
-		filetypes = { "typescript", "typescriptreact", "javascript", "javascriptreact" },
-		cmd = { "typescript-language-server", "--stdio" },
-	})
+	-- tsserver IS DEPRECATED USE ts_ls instead
+	--	lspconfig.tsserver.setup({
+	--		on_attach = function(client)
+	--			client.resolved_capabilities.document_formatting = false
+	--			client.resolved_capabilities.document_range_formatting = false
+	--		end,
+	--		filetypes = { "typescript", "typescriptreact", "javascript", "javascriptreact" },
+	--		cmd = { "typescript-language-server", "--stdio" },
+	--	})
 
 	-- Marksman LSP for Markdown
 	lspconfig.marksman.setup({

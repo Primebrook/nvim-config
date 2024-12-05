@@ -52,7 +52,16 @@ function M.setup()
 
 	vim.keymap.set("n", "<C-p>", builtin.find_files, {})
 	vim.keymap.set("n", "<leader>w", builtin.grep_string, {})
-	vim.keymap.set("n", "<leader>ps", builtin.live_grep, {})
+	-- vim.keymap.set("n", "<leader>ps", builtin.live_grep, {})
+	vim.keymap.set("n", "<leader>ps", function()
+		local folder = vim.fn.input("Folder: ", "", "dir")
+		if folder ~= "" then
+			builtin.live_grep({ search_dirs = { folder } })
+		else
+			print("No folder selected, searching entire project")
+			builtin.live_grep()
+		end
+	end, {})
 
 	-- LSP keybindings
 	vim.keymap.set("n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>", { noremap = true, silent = true })

@@ -4,6 +4,20 @@ function M.setup()
 	-- formatting
 	vim.keymap.set("n", "<leader>ff", ":!black . && isort .<CR>", { noremap = true, silent = true })
 
+	-- Add binding
+	vim.keymap.set(
+		"n",
+		"<leader>x",
+		"oimport ipdb ; ipdb.set_trace()<Esc>",
+		{ noremap = true, silent = true, buffer = true }
+	)
+	vim.keymap.set(
+		"n",
+		"<leader>X",
+		"0import ipdb ; ipdb.set_trace()<Esc>",
+		{ noremap = true, silent = true, buffer = true }
+	)
+
 	-- Commenting
 	function toggle_comment()
 		-- Get the range of selected lines in visual mode

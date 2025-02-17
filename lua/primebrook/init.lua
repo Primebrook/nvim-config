@@ -1,6 +1,9 @@
 local M = {}
 
 function M.setup()
+	-- Ensure Copilot uses the correct Node.js binary
+	vim.g.copilot_node_command = "/Users/brook/.nvm/versions/node/v22.10.0/bin/node"
+
 	require("primebrook.plugins").setup()
 	require("primebrook.treesitter").setup()
 	require("primebrook.lsp").setup()

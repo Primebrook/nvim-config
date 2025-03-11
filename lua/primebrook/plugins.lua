@@ -31,7 +31,7 @@ function M.setup()
 		-- telescope
 		use({
 			"nvim-telescope/telescope.nvim",
-			tag = "0.1.2",
+			tag = "0.1.8",
 			requires = { { "nvim-lua/plenary.nvim" } },
 		})
 
@@ -79,10 +79,6 @@ function M.setup()
 			end,
 			ft = { "markdown" },
 		})
-
-		-- vim dadbod stuff
-		use({ "tpope/vim-dadbod" })
-		use({ "kristijanhusak/vim-dadbod-ui" })
 	end)
 end
 

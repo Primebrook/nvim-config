@@ -33,6 +33,7 @@ I use `Packer` for plugin management.
 
 1. NeoVim (`brew install neovim`)
 2. Ripgrep (`brew install ripgrep`)
+3. fd (`brew install fd`)
 3. File Formatters:
     - jq (JSON formatter) (`brew install jq`)
     - shfmt (shell file formatter) (`brew install shfmt`)

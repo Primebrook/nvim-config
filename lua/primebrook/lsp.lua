@@ -2,6 +2,7 @@ local M = {}
 
 function M.setup()
 	local lspconfig = require("lspconfig")
+	local util = require("lspconfig.util")
 	vim.lsp.set_log_level("debug")
 
 	lspconfig.pylsp.setup({
@@ -22,15 +23,16 @@ function M.setup()
 		},
 	})
 
-	lspconfig.elixirls.setup({
-		cmd = { vim.fn.expand("~/.elixir-ls/language_server.sh") },
-		settings = {
-			elixirLS = {
-				dialyzerEnabled = true,
-				-- fetchDeps = false,
-			},
-		},
+	lspconfig.lexical.setup({
+		cmd = { "/Users/brook/lexical/_build/dev/package/lexical/bin/start_lexical.sh" },
+		root_dir = function(fname)
+			return util.root_pattern("mix.exs", ".git")(fname) or vim.loop.cwd()
+		end,
+		filetypes = { "elixir", "eelixir", "heex" },
+		-- optional settings
+		settings = {},
 	})
+
 	lspconfig.clangd.setup({
 		cmd = { vim.fn.expand("/Library/Developer/CommandLineTools/usr/bin/clangd") },
 	})

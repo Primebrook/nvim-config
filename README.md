@@ -43,25 +43,9 @@ I use `Packer` for plugin management.
 5. Language Servers (`elixirls`, `pyright`, `clangd`, `tsserver`)
 
 
-## Language Servers Setup:
+## Language Servers:
 
-e.g. elixir:
-
-1. Download latest ElixirLS from [here](https://github.com/elixir-lsp/elixir-ls/releases).
-    1. Unzip in a suitable location:
-    ```
-    unzip /Users/brook/Downloads/elixir-ls-v0.19.0.zip -d ~/.elixir-ls
-    ```
-    2. Make the language_server scrip executable:
-    ```
-    chmod +x ~/.elixir-ls/language_server.sh
-    ```
-2. Link the language server start script location in lsp.lua config.
-
-
-Language Servers:
-
-- `elixirls` (Elixir)
+- `lexical` (Elixir)
 - `pyright` (Python)
 - `clangd` (C/C++)
 - `tsserver` (TypeScript)

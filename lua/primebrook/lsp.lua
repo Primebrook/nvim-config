@@ -1,30 +1,27 @@
 local M = {}
 
 function M.setup()
-	local lspconfig = require("lspconfig")
 	local util = require("lspconfig.util")
-	vim.lsp.set_log_level("debug")
 
-	lspconfig.pylsp.setup({
-		cmd = { vim.fn.expand("~/.local/bin/pylsp") },
-		settings = {
-			pylsp = {
-				plugins = {
-					jedi_hover = { enabled = false }, -- Disable hover if not needed
-					jedi_signature_help = { enabled = false }, -- Disable signature help
-					jedi_symbols = { enabled = false }, -- Disable workspace symbols
-					pylint = { enabled = false }, -- Turn off Pylint if using Ruff
-					pyflakes = { enabled = false },
-					pycodestyle = { enabled = false },
-					ruff = { enabled = true }, -- Use Ruff instead (fast)
-					yapf = { enabled = false },
-				},
-			},
+	-- Python
+	vim.lsp.config("pyright", {
+	  settings = {
+		python = {
+		  pythonPath = vim.fn.system("which python"):gsub("\n", ""),
+		  analysis = {
+			typeCheckingMode = "basic",
+			autoSearchPaths = true,
+			useLibraryCodeForTypes = true,
+		  }
 		},
+	  },
 	})
+	vim.lsp.enable('pyright')
 
-	lspconfig.lexical.setup({
-		cmd = { "/Users/brook/lexical/_build/dev/package/lexical/bin/start_lexical.sh" },
+
+	-- Elixir
+	vim.lsp.config("elixirls", {
+		cmd = { "/Users/brook/elixir-ls-v0.30.0/language_server.sh" },
 		root_dir = function(fname)
 			return util.root_pattern("mix.exs", ".git")(fname) or vim.loop.cwd()
 		end,
@@ -32,16 +29,22 @@ function M.setup()
 		-- optional settings
 		settings = {},
 	})
+	vim.lsp.enable("elixirls")
 
-	lspconfig.clangd.setup({
+
+	-- C/C++
+	vim.lsp.config("clangd", {
 		cmd = { vim.fn.expand("/Library/Developer/CommandLineTools/usr/bin/clangd") },
 	})
+	vim.lsp.enable("clangd")
 
-	-- Marksman LSP for Markdown
-	lspconfig.marksman.setup({
+
+	-- Markdown
+	vim.lsp.config("marksman", {
 		cmd = { "marksman", "server" },
 		filetypes = { "markdown" },
 	})
+	vim.lsp.enable("marksman")
 end
 
 return M

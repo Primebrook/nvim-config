@@ -41,8 +41,9 @@ function M.setup()
 		--maximizes and restores current window
 		use({ "szw/vim-maximizer" })
 
+		-- don't need this since we can use the new neovim 0.11 API vim.lsp
 		-- lsp config
-		use({ "neovim/nvim-lspconfig" })
+		--use({ "neovim/nvim-lspconfig" })
 
 		-- cmp framework for auto-completion support
 		use({ "hrsh7th/nvim-cmp" })

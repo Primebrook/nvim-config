@@ -6,6 +6,7 @@ function M.setup()
 
 	-- Custom filetypes
 	vim.filetype.add({ extension = { chsql = "chsql" } })
+	vim.treesitter.language.register("sql", "chsql")
 
 	require("primebrook.plugins").setup()
 	require("primebrook.treesitter").setup()

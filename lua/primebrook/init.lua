@@ -4,6 +4,10 @@ function M.setup()
 	-- Ensure Copilot uses the correct Node.js binary
 	vim.g.copilot_node_command = "/Users/brook/.nvm/versions/node/v22.10.0/bin/node"
 
+	-- Custom filetypes
+	vim.filetype.add({ extension = { chsql = "chsql" } })
+	vim.treesitter.language.register("sql", "chsql")
+
 	require("primebrook.plugins").setup()
 	require("primebrook.treesitter").setup()
 	require("primebrook.lsp").setup()

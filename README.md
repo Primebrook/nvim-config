@@ -34,13 +34,17 @@ I use `Packer` for plugin management.
 1. NeoVim (`brew install neovim`)
 2. Ripgrep (`brew install ripgrep`)
 3. fd (`brew install fd`)
-3. File Formatters:
+4. Node (`mise use -g node@lts`) - needed by `markdown-preview.nvim`, which
+   shells out to `node` to run its preview server. It must be on `PATH` in the
+   shell you launch nvim from, otherwise `<leader>p` fails with
+   "Pre build and node is not found".
+5. File Formatters:
     - jq (JSON formatter) (`brew install jq`)
     - shfmt (shell file formatter) (`brew install shfmt`)
     - stylua (lua file formatter) (`brew install stylua`)
     - yamlfmt (yaml file formatter) (`brew install yamlfmt`).
-4. gh (GitHub CLI) (`brew install gh`)
-5. Language Servers (`elixirls`, `pyright`, `clangd`, `tsserver`)
+6. gh (GitHub CLI) (`brew install gh`)
+7. Language Servers (`elixirls`, `pyright`, `clangd`, `tsserver`)
 
 
 ## Language Servers:

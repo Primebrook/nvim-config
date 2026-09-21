@@ -77,6 +77,7 @@ function M.setup()
 			run = "cd app && npm install",
 			setup = function()
 				vim.g.mkdp_filetypes = { "markdown" }
+				vim.g.mkdp_browser = "Google Chrome"
 			end,
 			ft = { "markdown" },
 		})

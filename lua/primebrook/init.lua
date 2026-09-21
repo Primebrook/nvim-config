@@ -1,9 +1,6 @@
 local M = {}
 
 function M.setup()
-	-- Ensure Copilot uses the correct Node.js binary
-	vim.g.copilot_node_command = "/Users/brook/.nvm/versions/node/v22.10.0/bin/node"
-
 	-- Custom filetypes
 	vim.filetype.add({ extension = { chsql = "chsql" } })
 	vim.treesitter.language.register("sql", "chsql")
@@ -49,9 +46,6 @@ function M.setup()
 
 	-- FUGITIVE
 	vim.g.fugitive_diff_split = "vertical"
-
-	-- CO-PILOT
-	vim.g.copilot_filetypes = { c = false, markdown = false }
 end
 
 return M

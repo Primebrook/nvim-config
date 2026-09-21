@@ -2,7 +2,7 @@ local M = {}
 
 function M.setup()
 	-- formatting
-	vim.keymap.set("n", "<leader>ff", ":!black . && isort .<CR>", { noremap = true, silent = true })
+	vim.keymap.set("n", "<leader>ff", ":!uv run ruff format .<CR>", { noremap = true, silent = true })
 
 	-- Add binding
 	vim.keymap.set(
